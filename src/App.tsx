@@ -1,18 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import City from './components/City';
-import Page from './components/Page';
-import Warehouse from './components/Warehouse';
+import DataPage from './components/DataPage';
+import OrderForm from './components/OrderForm';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Page />
-        <City />
-        <Warehouse />
-      </header>
+      <main className="App-wrapper">
+        <OrderForm />
+        <DataPage />
+      </main>
     </div>
   );
 }

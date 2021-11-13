@@ -1,11 +1,34 @@
 import { getCities, getWarehouses } from '../API/api';
 import { BaseThunkType, InferActionTypes } from './store';
+type Torderdata = {
+	deliveryMethod: string,
+	clientData: {
+		lastName: string,
+		firstName: string,
+		phoneNumber: string,
+	},
+	customRecipient: boolean,
+	recipientData: {
+		lastName: string | null,
+		firstName: string | null,
+		phoneNumber: string | null,
+	},
+	courierAddress: string | null,
+	takeaway: {
+		shop: string | null,
+		city: string | null
+	},
+	paymentMethod: string | null,
+	city: string | null,
+	warehouse: string | null
+}
 const initialState = {
 	city: '' as string,
 	cityRef: '' as string,
 	cityResponse: null as any,
 	warehouse: null as string | null,
-	warehouseResponse: null as any
+	warehouseResponse: null as any,
+	orderdata: null as Torderdata | null
 }
 
 const poshtaReducer = (state = initialState, action: ActionTypes) => {
@@ -26,6 +49,11 @@ const poshtaReducer = (state = initialState, action: ActionTypes) => {
 			return {
 				...state, warehouseResponse: action.response
 			}
+		case 'SET_ORDER_DATA':
+			debugger
+			return {
+				...state, orderdata: action.data
+			}
 		default: return state
 	}
 }
@@ -33,7 +61,8 @@ export const actions = {
 	setCity: (name: string, ref: string) => ({ type: 'SET_CITY', name, ref } as const),
 	setWarehouse: (warehouse: string) => ({ type: 'SET_WAREHOUSE', warehouse } as const),
 	setCityResponse: (response: any) => ({ type: 'SET_CITY_RESPONSE', response } as const),
-	setWarehouseResponse: (response: any) => ({ type: 'SET_WAREHOUSE_RESPONSE', response } as const)
+	setWarehouseResponse: (response: any) => ({ type: 'SET_WAREHOUSE_RESPONSE', response } as const),
+	setOrderData: (data: Torderdata) => ({ type: 'SET_ORDER_DATA', data } as const)
 }
 type ActionTypes = InferActionTypes<typeof actions>
 type ThunkType = BaseThunkType<ActionTypes>

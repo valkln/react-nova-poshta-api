@@ -15,3 +15,6 @@ export const getCityRef = (state: AppStateType) => {
 export const getWarehouseResponse = (state: AppStateType) => {
 	return state.novaposhta.warehouseResponse
 }
+export const getOrderData = (state: AppStateType) => {
+	return state.novaposhta.orderdata
+}
