@@ -50,7 +50,6 @@ const poshtaReducer = (state = initialState, action: ActionTypes) => {
 				...state, warehouseResponse: action.response
 			}
 		case 'SET_ORDER_DATA':
-			debugger
 			return {
 				...state, orderdata: action.data
 			}

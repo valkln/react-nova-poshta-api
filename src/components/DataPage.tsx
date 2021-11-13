@@ -30,7 +30,7 @@ const DataPage = () => {
 		</> : null}
 		{orderdata.deliveryMethod === 'Самовивіз' ? <>
 			<Typography>Місто: {orderdata.takeaway.city} </Typography>
-			{orderdata.takeaway.shop ? <Typography>Місто: {orderdata.takeaway.shop} </Typography> : null}
+			{orderdata.takeaway.shop ? <Typography>Магазин: {orderdata.takeaway.shop} </Typography> : null}
 		</> : null}
 		{orderdata.deliveryMethod === "Доставка кур'єром" ? <>
 			<Typography>Адреса доставки: {orderdata.courierAddress} </Typography>

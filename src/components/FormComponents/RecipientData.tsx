@@ -1,6 +1,8 @@
 import { TextField, Typography } from "@mui/material";
+import { getIn } from "formik";
 import React from "react";
 const RecipientData = ({ formik }: any) => {
+	debugger
 	return <div>
 		<Typography>Інформация про отримувача</Typography>
 		<TextField
@@ -23,6 +25,7 @@ const RecipientData = ({ formik }: any) => {
 			variant="outlined" />
 		<TextField
 			sx={{ m: 1 }}
+			error={getIn(formik.touched, 'recipientData.phoneNumber') && getIn(formik.errors, 'recipientData.phoneNumber')}
 			onChange={formik.handleChange}
 			onBlur={formik.handleBlur}
 			value={formik.values.recipientData.phoneNumber}

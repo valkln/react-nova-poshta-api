@@ -10,6 +10,7 @@ const Takeaway = ({ formik }: any) => {
 				labelId="demo-simple-select-autowidth-label"
 				id="demo-simple-select-autowidth"
 				label="Місто"
+				defaultValue='Місто'
 				onChange={formik.handleChange}
 				name='takeaway.city'>
 				<MenuItem disabled value='Місто'>Місто</MenuItem>
@@ -30,6 +31,7 @@ const Takeaway = ({ formik }: any) => {
 					id="demo-simple-select-autowidth"
 					label="Магазин Києва"
 					onChange={formik.handleChange}
+					defaultValue='Магазин Києва'
 					name='takeaway.shop'>
 					<MenuItem disabled value='Магазин Києва'>Магазин Києва</MenuItem>
 					<MenuItem value='ст. м. Вокзальна'>ст. м. Вокзальна</MenuItem>

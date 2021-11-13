@@ -1,4 +1,5 @@
 import { TextField, Typography } from "@mui/material";
+import { getIn } from "formik";
 import React from "react";
 const ClientData = ({ formik }: any) => {
 	return <div>
@@ -6,6 +7,7 @@ const ClientData = ({ formik }: any) => {
 		<TextField
 			sx={{ m: 1 }}
 			required
+			error={getIn(formik.touched, 'clientData.lastName') && getIn(formik.errors, 'clientData.lastName')}
 			onChange={formik.handleChange}
 			onBlur={formik.handleBlur}
 			value={formik.values.clientData.lastName}
@@ -16,6 +18,7 @@ const ClientData = ({ formik }: any) => {
 		<TextField
 			sx={{ m: 1 }}
 			required
+			error={getIn(formik.touched, 'clientData.firstName') && getIn(formik.errors, 'clientData.firstName')}
 			onChange={formik.handleChange}
 			onBlur={formik.handleBlur}
 			value={formik.values.clientData.firstName}
@@ -26,6 +29,7 @@ const ClientData = ({ formik }: any) => {
 		<TextField
 			sx={{ m: 1 }}
 			required
+			error={getIn(formik.touched, 'clientData.phoneNumber') && getIn(formik.errors, 'clientData.phoneNumber')}
 			onChange={formik.handleChange}
 			onBlur={formik.handleBlur}
 			value={formik.values.clientData.phoneNumber}

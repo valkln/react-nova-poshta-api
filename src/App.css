@@ -14,21 +14,14 @@
 }
 
 .App-wrapper {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  font-size: calc(10px + 2vmin);
+}
+@media (min-width: 769px) {
+  .App-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
